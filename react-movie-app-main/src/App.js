@@ -12,6 +12,7 @@ const App = () => {
 	const [movies, setMovies] = useState([]);
 	const [favourites, setFavourites] = useState([]);
 	const [searchValue, setSearchValue] = useState('');
+	
 
 //o getMovieRequest pega o nosso SearchValue e pede para a api e nos pegamos a respota convertemos para json e se nos tivemos algum resultado de pesquisa nos ficaremos coma função if 
 	const getMovieRequest = async (searchValue) => {
@@ -72,7 +73,10 @@ const App = () => {
 	//criamos a classe movie-app pois os filmes não continuavam na mesma linha e quando diminuiamos a pagina ele ia pra baixo 
 	//Oque temos que fazer com o valor dentro da serch é, guardar ele dentro do searchValue State e toda vez que isso mudar nós iremos chamar o getmovierequest, a primeira coisa que temos que fazer é passar o searchValue e o SetSearchValue para nossa searchBox e puxar ele para a area do input
 	return (
+
+		
 		<div className='container-fluid movie-app'>
+			<h1>BODE COLORIDO</h1>
 			<div className='row d-flex align-items-center mt-4 mb-4'>
 				<MovieListHeading heading='Movies' />
 				<SearchBox searchValue={searchValue} setSearchValue={setSearchValue} />
