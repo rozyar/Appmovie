@@ -20,6 +20,7 @@ const App = () => {
 				<Route path={routeMoviePage} element={<MoviePage id={id} poster={poster} />}/>
 			</Routes>
     	</Router>
+
 	);
 };
 
