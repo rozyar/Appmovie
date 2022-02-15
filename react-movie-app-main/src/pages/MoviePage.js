@@ -26,7 +26,8 @@ export function MoviePage(props){
         <>
             <h1>{movieInfo.title}</h1>
             <img src={props.poster} alt='movie'/>
-            <h2>{movieInfo.overview}</h2>
+            <h2>{movieInfo.release_date}</h2>
+            <h3> {movieInfo.overview} </h3>
             <Link to="../Main"><button type="button"> VOLTAR PARA MAIN</button></Link>
         </>
     )
