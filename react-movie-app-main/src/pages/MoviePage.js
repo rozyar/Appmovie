@@ -1,10 +1,19 @@
 import React, { useState , useEffect } from "react"
 import { Link } from "react-router-dom";
+import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 export function MoviePage(props){
 
-    const [movieInfo , setMovieInfo] = useState("a");
-    const [arrComentario , setArr] = useState("");
+
+
+    const [movieInfo , setMovieInfo] = useState({});
+    const [arrComentario , setArr] = useState([]);
+    const [comment , setComment] = useState("");
+    const [user , setUser] = useState("");
+    const [posted , setPosted] = useState(false);
+
+    const navigate = useNavigate();
 
     const id = props.id;
 
@@ -34,21 +43,44 @@ export function MoviePage(props){
 
         for(let i =0; i<responseJson.length ; i++){
             if(responseJson[i].filme === id){
-                comentarios.push(`${responseJson[i].comentario}`)
+                comentarios.push(responseJson[i])
+                console.log(comentarios)
             }
         }
 
         setArr(comentarios)
 	};
 
+
+
     useEffect(() => {
 		getMovieInfo(id)
         getCommentaryInfo()
-	}, []);   
+        setPosted(false)
+	}, [posted]);   
 
-    console.log(arrComentario)
+
+    async function handleSubmit(event){
+        event.preventDefault()
+        await axios.post("https://ironrest.herokuapp.com/apiDICKvigarista",{
+           "filme": `${id}`,
+           "comentario":comment,
+           "userName":user
+        })
+        setPosted(true)
+        navigate(`/Main/${id}`)
+        
+    }
+    
+    function handleChange(event){
+        setComment(event.target.value)
+    }
+    function handleChange2(event){
+        setUser(event.target.value)
+    }
 
     
+
     return(
         <>
             <h1>{movieInfo.title}</h1>
@@ -59,12 +91,20 @@ export function MoviePage(props){
                 {   
                     arrComentario.map((current,index) => {
                         return(
-                           <li>{current}</li> 
+                           <li key="index">O usuário {current.userName} comentou:{current.comentario}</li>
                         )
                     }
                     )
                 }
             </ul>
+            <form>
+                <label htmlFor="user">Nome de Usuário:</label>
+                <input id="user" value={user} onChange={handleChange2} name="comment"/>
+                <br/>
+                <label htmlFor="comment">Inserir Comentário:</label>
+                <input id="comment" value={comment} onChange={handleChange} name="comment"/>
+                <button type="submit" onClick={handleSubmit}>Enviar</button>
+            </form>
             <Link to="../Main"><button type="button"> VOLTAR PARA MAIN</button></Link>
         </>
     )
