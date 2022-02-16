@@ -2,6 +2,8 @@ import React, { useState , useEffect } from "react"
 import { Link } from "react-router-dom";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import { Comentario } from "../components/Comentario";
+
 
 export function MoviePage(props){
 
@@ -44,7 +46,6 @@ export function MoviePage(props){
         for(let i =0; i<responseJson.length ; i++){
             if(responseJson[i].filme === id){
                 comentarios.push(responseJson[i])
-                console.log(comentarios)
             }
         }
 
@@ -78,8 +79,7 @@ export function MoviePage(props){
     function handleChange2(event){
         setUser(event.target.value)
     }
-
-    
+ 
 
     return(
         <>
@@ -91,7 +91,7 @@ export function MoviePage(props){
                 {   
                     arrComentario.map((current,index) => {
                         return(
-                           <li key="index">O usuário {current.userName} comentou:{current.comentario}</li>
+                           <Comentario id={current._id} index={index} comentario={current.comentario} userName={current.userName} setPosted={setPosted} /> 
                         )
                     }
                     )
