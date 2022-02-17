@@ -1,5 +1,5 @@
 import React from 'react';
-
+//up
 const MovieListHeading = (props) => {
 	return (
 		<div className='col'>

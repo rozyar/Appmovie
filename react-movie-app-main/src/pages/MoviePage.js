@@ -1,6 +1,6 @@
 import React, { useState } from "react"
 import { Link } from "react-router-dom";
-
+//up
 export function MoviePage(props){
 
     const [movieInfo , setMovieInfo] = useState("a")
@@ -24,11 +24,19 @@ export function MoviePage(props){
 
     return(
         <>
-            <h1>{movieInfo.title}</h1>
-            <img src={props.poster} alt='movie'/>
-            <h2>{movieInfo.release_date}</h2>
-            <h3> {movieInfo.overview} </h3>
-            <Link to="../Main"><button type="button"> VOLTAR PARA MAIN</button></Link>
+        <div class="return">
+        <Link to="../Main"><a class="arrow"> </a> </Link>   
+        </div>
+
+            <div class="content">
+            <img className="image" src={props.poster} alt='movie'/>
+            <div classname="container-text">
+            <h1 class="Titulo">{movieInfo.title}</h1>
+            <h2 class="Subtitulo">{movieInfo.release_date}</h2>
+            <h3 class="Sinopse">{movieInfo.overview}</h3>
+            </div>
+            </div>
+            
         </>
     )
 }

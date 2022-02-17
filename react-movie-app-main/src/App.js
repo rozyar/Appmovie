@@ -3,7 +3,7 @@ import { Main } from "./pages/Main";
 import {BrowserRouter as Router, Routes, Route, Navigate} from "react-router-dom";
 import { useState } from 'react';
 import { MoviePage } from "./pages/MoviePage";
-
+//up
 
 const App = () => {
 
