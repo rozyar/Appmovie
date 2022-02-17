@@ -1,0 +1,33 @@
+.commentbox{
+    display:flex;
+    justify-content:center;
+    width: 100%;
+  }
+  
+  
+  .conteudo{
+    border-radius:5px;
+    background-color:gray;
+    border:1px solid black;
+    width:500px;
+  }
+  
+  .conteudo hr{
+    height:10px;
+    color:black;
+  }
+
+  .conteudo h1{
+    font-size:20px;
+    color:blue;
+    margin-left:10px;
+  }
+  
+  .conteudo p{
+    word-wrap    : break-word;
+    overflow-wrap: break-word;
+    font-size:15px;
+    margin-left:20px;
+    width:400px;
+      
+  }

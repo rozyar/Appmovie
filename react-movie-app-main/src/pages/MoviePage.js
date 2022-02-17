@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { Comentario } from "../components/Comentario";
+import "./styles.css";
 
 
 export function MoviePage(props){
@@ -80,13 +81,32 @@ export function MoviePage(props){
         setUser(event.target.value)
     }
  
-
+    
     return(
         <>
-            <h1>{movieInfo.title}</h1>
-            <img src={props.poster} alt='movie'/>
-            <h2>{movieInfo.release_date}</h2>
-            <h3> {movieInfo.overview} </h3>
+        <div className="return">
+        <Link to="../Main"><a className="arrow">  </a></Link>
+        </div>
+        <div className="content">
+            <img className="image" src={props.poster} alt='movie'/>
+            <div classname="container-text">
+            <h1 className="Titulo">{movieInfo.title}</h1>
+            <h2 className="Subtitulo">{movieInfo.release_date}</h2>
+            <h3 className="Sinopse"> {movieInfo.overview} </h3>
+            </div>
+        </div>
+        
+        <div className="comentCreation">
+            <div className="comentBox">
+            <form>    
+                <input id="user" value={user} onChange={handleChange2} name="comment" placeholder="Nome de Usuário"/>
+                <br/>
+                
+                <textarea id="comment" cols="20" rows="5" value={comment} onChange={handleChange} name="comment" placeholder="Inserir Comentário"/>
+                <button type="submit" onClick={handleSubmit}>Enviar</button>
+            </form>
+            </div>
+        </div>
             <ul>
                 {   
                     arrComentario.map((current,index) => {
@@ -97,15 +117,6 @@ export function MoviePage(props){
                     )
                 }
             </ul>
-            <form>
-                <label htmlFor="user">Nome de Usuário:</label>
-                <input id="user" value={user} onChange={handleChange2} name="comment"/>
-                <br/>
-                <label htmlFor="comment">Inserir Comentário:</label>
-                <input id="comment" value={comment} onChange={handleChange} name="comment"/>
-                <button type="submit" onClick={handleSubmit}>Enviar</button>
-            </form>
-            <Link to="../Main"><button type="button"> VOLTAR PARA MAIN</button></Link>
         </>
     )
 }

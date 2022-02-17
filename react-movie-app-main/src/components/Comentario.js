@@ -1,4 +1,5 @@
 import axios from "axios";
+import "./Coment.css"
 export function Comentario(props){
 
   console.log(props.index+props.userName+props.comentario+props.id)
@@ -15,7 +16,14 @@ export function Comentario(props){
   }
 
   return (
-    <li key={props.index}>O usuário {props.userName} comentou:{props.comentario} <button type="button" onClick={handleDelete}>DELETAR POST</button></li>
+    <div className="commentbox" key={props.index}>
+      <div class="conteudo">
+       <h1>{props.userName}</h1> 
+       <hr/>
+       <p>{props.comentario}</p>
+      <button type="button" onClick={handleDelete}>DELETAR POST</button>
+      </div>
+      </div>
   )
 
 }
