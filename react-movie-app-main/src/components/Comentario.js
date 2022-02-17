@@ -1,4 +1,6 @@
 import axios from "axios";
+
+import { Link } from "react-router-dom";
 import "./Coment.css"
 export function Comentario(props){
 
@@ -24,6 +26,7 @@ export function Comentario(props){
        <hr/>
        <p>{props.comentario}</p>
       <button className="botao"type="button" onClick={handleDelete}>DELETAR POST</button>
+      <Link to={props.id} ><button className="botao" type="button" >EDITAR POST</button></Link>
       </div>
       </div>
   )

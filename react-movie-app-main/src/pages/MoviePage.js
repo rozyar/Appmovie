@@ -70,7 +70,7 @@ export function MoviePage(props){
            "userName":user
         })
         setPosted(true)
-        navigate(`/Main/${id}`)
+        navigate(`/${id}`)
         
     }
     
@@ -79,14 +79,16 @@ export function MoviePage(props){
     }
     function handleChange2(event){
         setUser(event.target.value)
-    }
- 
- 
+
+    useEffect(() => {
+        setPosted(true)
+	}, []); 
     
     return(
         <>
         <div className="return">
-        <Link to="../Main"> <a className="arrow"></a></Link>
+
+        <Link to="../"> <div className="arrow"></div></Link>
         </div>
 
         <div className="content">
@@ -109,16 +111,15 @@ export function MoviePage(props){
             </form>
             </div>
         </div>
-            
-                {   
-                    arrComentario.map((current,index) => {
-                        return(
-                           <Comentario id={current._id} index={index} comentario={current.comentario} userName={current.userName} setPosted={setPosted} /> 
-                        )
-                    }
+            {   
+                arrComentario.map((current,index) => {
+                    return(
+                       <Comentario id={current._id} index={index} comentario={current.comentario} userName={current.userName} setPosted={setPosted} /> 
                     )
                 }
-            
+                )
+            }
+
         </>
     )
 }
