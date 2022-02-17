@@ -79,7 +79,6 @@ export function MoviePage(props){
     }
     function handleChange2(event){
         setUser(event.target.value)
-    }
 
     useEffect(() => {
         setPosted(true)
@@ -88,6 +87,7 @@ export function MoviePage(props){
     return(
         <>
         <div className="return">
+
         <Link to="../"> <div className="arrow"></div></Link>
         </div>
 
@@ -119,6 +119,7 @@ export function MoviePage(props){
                 }
                 )
             }
+
         </>
     )
 }
