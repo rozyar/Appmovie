@@ -1,5 +1,10 @@
 import axios from "axios";
+import { Link } from "react-router-dom";
+import "./Coment.css"
+
 export function Comentario(props){
+
+//up
 
   console.log(props.index+props.userName+props.comentario+props.id)
 
@@ -15,7 +20,16 @@ export function Comentario(props){
   }
 
   return (
-    <li key={props.index}>O usuário {props.userName} comentou:{props.comentario} <button type="button" onClick={handleDelete}>DELETAR POST</button></li>
+    <div className="commentbox" key={props.index}>
+      <div className="conteudo">
+       <h1>{props.userName}</h1> 
+       <hr/>
+       <p>{props.comentario}</p>
+      <button className="botao"type="button" onClick={handleDelete}>DELETAR POST</button>
+      <Link to={props.id} ><button className="botao" type="button" >EDITAR POST</button></Link>
+      
+      </div>
+      </div>
   )
 
 }

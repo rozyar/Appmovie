@@ -6,7 +6,8 @@ import MovieListHeading from '../components/MovieListHeading';
 import SearchBox from '../components/SearchBox';
 import AddFavourites from '../components/AddFavourites';
 import RemoveFavourites from '../components/RemoveFavourites';
-
+//up
+//up
 export function Main(props) {
 	//primeiro useState segura o resultado que voltam da search search
 	const [movies, setMovies] = useState([]);
@@ -87,7 +88,7 @@ export function Main(props) {
 				/>
 			</div>
 			<div className='row d-flex align-items-center mt-4 mb-4'>
-				<MovieListHeading heading='Favourites' />
+				<MovieListHeading heading='Favorites' />
 			</div>
 			<div className='row'>
 				<MovieList
