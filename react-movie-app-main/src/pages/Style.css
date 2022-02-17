@@ -79,7 +79,10 @@
     display:flex;
     background-color: rgb(29, 28, 28);
     width: 500px;
-    height: 250px;
+    justify-content: center;
+    max-height: 370px;
+    border-radius: 20px;
+    border: solid black 1px;
 }
 
 
@@ -102,7 +105,7 @@
 .comentBox textarea {
     width: 400px;
     height: 100px;
-    padding: 15px 20px;
+    padding: 15px 20px 15px 20px;
     margin-bottom: 10px;
     resize:none;
     margin-left:48px;
@@ -124,6 +127,11 @@
     font-size:18px;
     border-radius: 5px;
     color: black;
+    margin-bottom: 20px;
 
+}
 
+.label{
+    margin-left: 48px;
+    margin-top: 20px;
 }

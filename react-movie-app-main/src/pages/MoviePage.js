@@ -79,7 +79,7 @@ export function MoviePage(props){
     }
     function handleChange2(event){
         setUser(event.target.value)
-
+    }
     useEffect(() => {
         setPosted(true)
 	}, []); 
@@ -105,7 +105,6 @@ export function MoviePage(props){
             <form>    
                 <input id="user" value={user} onChange={handleChange2} name="comment" placeholder="Nome de Usuário"/>
                 <br/>
-                
                 <textarea id="comment" cols="20" rows="5" value={comment} onChange={handleChange} name="comment" placeholder="Inserir Comentário"/>
                 <button type="submit" onClick={handleSubmit}>Enviar</button>
             </form>
