@@ -94,7 +94,7 @@
     border: 1px solid #86b0b6
 }
 
-.comentCreation input:focus{
+.comentBox input:focus{
     border: 1px solid white;
     
     }
@@ -104,18 +104,19 @@
     height: 100px;
     padding: 15px 20px;
     margin-bottom: 10px;
+    resize:none;
     margin-left:48px;
     border-radius: 5px;
     border: 1px solid #86b0b6
 
 }
 
-.comentCreation textarea:focus{
+.comentBox textarea:focus{
     border: 1px solid white;
 
 }
 
-.comentCreation Button{
+.comentBox Button{
     border: 0;
     padding: 10px 30px;
     background-color:#86b0b6;
