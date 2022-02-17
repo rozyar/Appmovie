@@ -1,3 +1,5 @@
+/* up */
+
 .commentbox{
     display:flex;
     justify-content:center;
@@ -19,7 +21,7 @@
 
   .conteudo h1{
     font-size:20px;
-    color:gray;
+    color:blue;
     margin-left:10px;
   }
   

@@ -7,6 +7,7 @@ import SearchBox from '../components/SearchBox';
 import AddFavourites from '../components/AddFavourites';
 import RemoveFavourites from '../components/RemoveFavourites';
 //up
+//up
 export function Main(props) {
 	//primeiro useState segura o resultado que voltam da search search
 	const [movies, setMovies] = useState([]);
