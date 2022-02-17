@@ -86,11 +86,12 @@ export function MoviePage(props){
     return(
         <>
         <div className="return">
-        <Link to="../Main"><a className="arrow">  </a></Link>
+        <Link to="../Main"> <a className="arrow"></a></Link>
         </div>
+
         <div className="content">
             <img className="image" src={props.poster} alt='movie'/>
-            <div classname="container-text">
+            <div className="container-text">
             <h1 className="Titulo">{movieInfo.title}</h1>
             <h2 className="Subtitulo">{movieInfo.release_date}</h2>
             <h3 className="Sinopse"> {movieInfo.overview} </h3>
@@ -108,7 +109,7 @@ export function MoviePage(props){
             </form>
             </div>
         </div>
-            <ul>
+            
                 {   
                     arrComentario.map((current,index) => {
                         return(
@@ -117,7 +118,7 @@ export function MoviePage(props){
                     }
                     )
                 }
-            </ul>
+            
         </>
     )
 }

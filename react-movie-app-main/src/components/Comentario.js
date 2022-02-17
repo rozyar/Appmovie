@@ -19,11 +19,11 @@ export function Comentario(props){
 
   return (
     <div className="commentbox" key={props.index}>
-      <div class="conteudo">
+      <div className="conteudo">
        <h1>{props.userName}</h1> 
        <hr/>
        <p>{props.comentario}</p>
-      <button type="button" onClick={handleDelete}>DELETAR POST</button>
+      <button className="botao"type="button" onClick={handleDelete}>DELETAR POST</button>
       </div>
       </div>
   )
