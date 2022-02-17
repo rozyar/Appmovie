@@ -1,6 +1,7 @@
 import { useParams , useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 import axios from "axios";
+import "./Style.css"
 
 export function EditComment(){
     const params = useParams();
@@ -55,22 +56,28 @@ export function EditComment(){
     }
 
     return(
-    <form onSubmit={handleSubmit}>
-      <label htmlFor="userName">Nome de Usuário:</label>
-      <input
-        id="UserName"
-        name="userName"
-        value={form.userName}
-        onChange={handleChange}
-      />
-      <label htmlFor="comment">Novo comentário:</label>
-      <input
-        id="comment"
-        name="comentario"
-        value={form.comentario}
-        onChange={handleChange}
-      />
-      <button type="submit">Cadastrar comentário editado</button>
-    </form>
+    <div className="comentCreation">
+      <div className="comentBox">
+        <form onSubmit={handleSubmit}>
+          <label className="label" htmlFor="userName">Nome de Usuário:</label>
+          <input
+            id="UserName"
+            name="userName"
+            value={form.userName}
+            onChange={handleChange}
+          />
+          <label className="label" htmlFor="comment">Novo comentário:</label>
+          <textarea 
+            cols="20" 
+            rows="5"
+            id="comment"
+            name="comentario"
+            value={form.comentario}
+            onChange={handleChange}
+          />
+          <button type="submit">Cadastrar comentário editado</button>
+        </form>
+      </div>
+    </div>
     )
 }
